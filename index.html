@@ -39,11 +39,23 @@
 
 <!-- Feature Section -->
 <section id="features">
-    <div class="feature">
-        <img src="feature1.jpg" alt="Feature 1">
-        <h2>Feature 1</h2>
-        <p>Description of Feature 1</p>
-    </div>
+    <ul>
+        <li class="feature1">
+            <h2> - Searchable books database</h2>
+            <img class="feature-gif hide" src="path_to_your_gif.gif" alt="Description of GIF">
+            <p>A modern searchable books database that give you a quick access to the library </p>
+        </li>
+        <li class="feature-2">
+            <h2>- User system</h2>
+            <img class="feature-gif hide" src="path_to_your_gif.gif" alt="Description of GIF">
+            <p>A user system which allows you to continue reading where you left off  </p>
+        </li>
+        <li class="feature-3">
+            <h2>- Bookmark system</h2>
+            <p></p>
+            <p>A bookmark system which allows you to remember interesting pages by giving it a name </p>
+        </li>
+    </ul>
     <!-- Repeat for other features -->
 </section>
 
@@ -52,10 +64,23 @@
     <p>My inspiration for the project</p>
 
 </section>
-
-<!-- Optional Section -->
-<section id="video">
-    <video src="your_video.mp4" controls></video>
-</section>
 </body>
+<footer>
+    <script>
+        document.querySelectorAll('#features li h2').forEach((title) => {
+            let clicked = false;
+            title.addEventListener('mouseover', function() {
+                this.nextElementSibling.classList.remove('hide');
+            });
+            title.addEventListener('mouseout', function() {
+                if (!clicked) {
+                    this.nextElementSibling.classList.add('hide');
+                }
+            });
+            title.addEventListener('click', function() {
+                clicked = !clicked;
+            });
+        });
+    </script>
+</footer>
 </html>
